@@ -1,0 +1,153 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	position: relative;
+	overflow: hidden;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#canvas {
+	height: 100vh;
+	width: 100vw;
+}
+.dots {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	width: 250px;
+	height: 200px;
+	opacity: 0.5;
+}
+.dot {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background-color: #fff;
+}
+.dot:nth-child(1) {
+	top: 75%;
+	left: -40%;
+	transform: translate(-50%,-50%);
+	cursor: pointer;
+}
+.dot:nth-child(2) {
+	right: -50.5%;
+	bottom: -50%;
+	transform: translate(-50%,-50%);
+}
+.dot:nth-child(3) {
+	top: -25%;
+	left: -10%;
+	transform: translate(-50%,-50%);
+}
+.dot:nth-child(4) {
+	top: -5%;
+	right: -85%;
+	transform: translate(-50%,-50%);
+}
+.messanger {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	height: 85vh;
+	width: 30vw;
+	background-color: #fff;
+	transform: translateX(100%);
+	transition: 0.5s;
+	z-index: 12;
+}
+.messanger__header {
+	position: relative;
+	background-color: black;
+	width: 100%;
+	height: 25%;
+	text-align: center;
+}
+.messanger__close {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	right: 10%;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 30px;
+	height: 30px;
+	background-color: black;
+	cursor: pointer;
+}
+.messanger__close span {
+	position: relative;
+	width: 20px;
+	height: 1px;
+	background-color: black;
+}
+.messanger__close span:before {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 1px;
+	background-color: #fff;
+	top: 0;
+	left: 0;
+	transform: rotate(45deg);
+}
+.messanger__close span:after {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 1px;
+	background-color: #fff;
+	left: 0;
+	bottom: 0;
+	transform: rotate(-45deg);
+}
+img {
+	max-height: 100%;
+	max-width: 100%;
+}
+li {
+	list-style: none;
+}
+.messanger__info {
+	width: 100%;
+	max-height: 10%;
+	text-align: center;
+	border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+.messanger__info ul {
+	display: flex;
+	justify-content: space-around;
+	padding: 15px 0;
+}
+.messanger__info ul li {
+	font-weight: 500;
+	color: #5f5f5f;
+}
+.flex {
+	display: flex;
+}
+.game__column {
+	width: 33%;
+	font-size: 12px;
+	margin-left: 20px;
+	text-align: left;
+}
+.game__column span {
+	margin-bottom: 20px;
+	font-weight: 700;
+}
+.messanger__game {
+	padding: 10px 20px;
+}
+.messanger__game img {
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+}
+
+.windowActive {
+	transform: translateX(0);
+}

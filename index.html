@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<div class="dots">
+		<div class="dot d1"></div>
+		<div class="dot d2"></div>
+		<div class="dot d3"></div>
+		<div class="dot d4"></div>
+	</div>
+	<div class="messanger">
+		<div class="messanger__header">
+			<img src="./images/ashes.jpg" alt="">
+			<div class="messanger__close">
+				<span></span>
+			</div>
+		</div>
+		<div class="messanger__info">
+			<ul>
+				<li>Name</li>
+				<li>Developer</li>
+				<li>Platform</li>
+			</ul>
+		</div>
+		<div class="messanger__game flex">
+			<img src="./images/game__item1.jpg" alt="">
+			<ul class="flex">
+				<li class="game__column"><span>SplitMonster: The Saga</span> Action, RPG</li>
+				<li class="game__column">SpellBox Creation</li>
+				<li class="game__column">PC</li>
+			</ul>
+		</div>
+		<div class="messanger__game flex">
+			<img src="./images/game__item2.jpg" alt="">
+			<ul class="flex">
+				<li class="game__column"><span>Cursed Blade</span> Action, RPG</li>
+				<li class="game__column">SpellBox Creation</li>
+				<li class="game__column">PC</li>
+			</ul>
+		</div>
+		<div class="messanger__game flex">
+			<img src="./images/game__item3.jpg" alt="">
+			<ul class="flex">
+				<li class="game__column"><span>World Of Warcraft</span> Action, RPG</li>
+				<li class="game__column">Blizzard</li>
+				<li class="game__column">PlayStation</li>
+			</ul>
+		</div>
+		<div class="messanger__game flex">
+			<img src="./images/game__item4.jpg" alt="">
+			<ul class="flex">
+				<li class="game__column"><span>SplitMonster: The Saga</span> Action, RPG</li>
+				<li class="game__column">SpellBox Creation</li>
+				<li class="game__column">XboX</li>
+			</ul>
+		</div>
+		<div class="messanger__game flex">
+			<img src="./images/game__item4.jpg" alt="">
+			<ul class="flex">
+				<li class="game__column"><span>SplitMonster: The Saga</span> Action, RPG</li>
+				<li class="game__column">SpellBox Creation</li>
+				<li class="game__column">XboX</li>
+			</ul>
+		</div>
+	</div>
+	<!-- <script src="https://preview.babylonjs.com/gltf_validator.js"></script>
+  <script src="https://preview.babylonjs.com/babylon.js"></script>
+	<script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script> -->
+	<script src="https://code.jquery.com/pep/0.4.2/pep.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
+	<script src="https://preview.babylonjs.com/ammo.js"></script>
+	<script src="https://preview.babylonjs.com/cannon.js"></script>
+	<script src="https://preview.babylonjs.com/Oimo.js"></script>
+	<script src="https://preview.babylonjs.com/libktx.js"></script>
+	<script src="https://preview.babylonjs.com/earcut.min.js"></script>
+	<script src="https://preview.babylonjs.com/babylon.js"></script>
+	<script src="https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js"></script>
+	<script src="https://preview.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
+	<script src="https://preview.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
+	<script src="https://preview.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script>
+	<script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+	<script src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
+	<script src="https://preview.babylonjs.com/gui/babylon.gui.min.js"></script>
+	<script src="./js/index.js"></script>
+	<script>
+// 		  var canvas = document.getElementById("canvas");
+
+// var engine = null;
+// var scene = null;
+// var sceneToRender = null;
+// var createDefaultEngine = function() { return new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true }); };
+// // You have to create a function called createScene. This function must return a BABYLON.Scene object
+// // You can reference the following variables: scene, canvas
+// // You must at least define a camera
+// // More info here: https://doc.babylonjs.com/generals/The_Playground_Tutorial
+
+// var createScene = function() {
+// 	var scene = new BABYLON.Scene(engine);
+
+// 		// Set Camera
+// 		var camera = new BABYLON.ArcRotateCamera('camera', 1, 1, 1, new BABYLON.Vector3(0, 0, 0), scene);
+
+// 		camera.mode = BABYLON.Camera.ORTHOGRAPHIC_CAMERA;
+		
+// 		var distance = 500;	
+// 		var aspect = scene.getEngine().getRenderingCanvasClientRect().height / scene.getEngine().getRenderingCanvasClientRect().width; 
+// 		camera.orthoLeft = -distance/2;
+// 		camera.orthoRight = distance / 2;
+// 		camera.orthoBottom = camera.orthoLeft * aspect;
+// 		camera.orthoTop = camera.orthoRight * aspect;
+
+// 		// last param from this function is telling you which buton to use for panning, so no more need line 34
+// 		camera.attachControl(canvas, true, false, 0);
+// 		// you don't need to call 2 time same function. it is enough 1 time
+// 		// camera.attachControl(canvas, true, false);
+
+// 		// using this property you can choose which axis to be use for panning
+// 		camera.panningAxis = new BABYLON.Vector3(1, 1, 0);
+// 		camera.upperBetaLimit = Math.PI / 2;
+// 		camera.wheelPrecision = 0.1;
+// 		camera.panningSensibility = 1;
+// 		camera.inertia = 0.1;
+// 		camera.panningInertia = 0.2;
+// 		// never use variable with _ because they are private and can be changed durring development
+// 		// camera._panningMouseButton = 0; // change functionality from left to right mouse button
+// 		camera.angularSensibilityX = 500;
+// 		camera.angularSensibilityY = 500;
+
+// 		// Set Objects
+// 		var light = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0,1,0), scene);
+// 		// var sphere = BABYLON.MeshBuilder.CreateSphere('sphere', {segments:16, diameter:2}, scene);
+// 		// sphere.position.y = 1;
+// 		// var ground = BABYLON.MeshBuilder.CreateGround('ground1', {height:200, width:200, subdivisions: 2}, scene);
+		// var building = BABYLON.SceneLoader.Append("./", "test.babylon.gltf", scene, function (meshes) {    
+		// 	scene.createDefaultCameraOrLight(true, true, true);
+		// 	}); 
+// 		scene.activeCamera = camera
+// 		camera.setTarget = new BABYLON.Vector3(building);
+		
+// 		var myMaterial = new BABYLON.StandardMaterial("myMaterial", scene);
+// 		myMaterial.diffuseColor = new BABYLON.Color3(1, 0, 1);
+// 		// sphere.material = myMaterial;
+
+// 		// showWorldAxis(3000, 0, scene);
+
+// 		return scene;
+// };
+
+
+
+// 		// function showWorldAxis(size, heightAboveGround, scene) {
+// 		// 		var makeTextPlane = function(text, color, size) {
+// 		// 				var dynamicTexture = new BABYLON.DynamicTexture("DynamicTexture", 50, scene, true);
+// 		// 				dynamicTexture.hasAlpha = true;
+// 		// 				dynamicTexture.drawText(text, 5, 40, "bold 36px Arial", color, "transparent", true);
+// 		// 				var plane = BABYLON.Mesh.CreatePlane("TextPlane", size, scene, true);
+// 		// 				plane.material = new BABYLON.StandardMaterial("TextPlaneMaterial", scene);
+// 		// 				plane.material.backFaceCulling = false;
+// 		// 				plane.material.specularColor = new BABYLON.Color3(0, 0, 0);
+// 		// 				plane.material.diffuseTexture = dynamicTexture;
+// 		// 				return plane;
+// 		// 		};
+// 		// 		var axisX = BABYLON.Mesh.CreateLines("axisX", [
+// 		// 				new BABYLON.Vector3(0, heightAboveGround, 0), new BABYLON.Vector3(size, heightAboveGround, 0), new BABYLON.Vector3(size * 0.95, 0.05 * size + heightAboveGround, 0),
+// 		// 				new BABYLON.Vector3(size, heightAboveGround, 0), new BABYLON.Vector3(size * 0.95, -0.05 * size + heightAboveGround, 0)
+// 		// 		], scene);
+// 		// 		axisX.color = new BABYLON.Color3(1, 0, 0);
+// 		// 		var xChar = makeTextPlane("X", "red", size / 10);
+// 		// 		xChar.position = new BABYLON.Vector3(0.9 * size, -0.05 * size + heightAboveGround, 0);
+// 		// 		var axisY = BABYLON.Mesh.CreateLines("axisY", [
+// 		// 				BABYLON.Vector3.Zero(), new BABYLON.Vector3(0, size, 0), new BABYLON.Vector3(-0.05 * size, size * 0.95, 0),
+// 		// 				new BABYLON.Vector3(0, size, 0), new BABYLON.Vector3(0.05 * size, size * 0.95, 0)
+// 		// 		], scene);
+// 		// 		axisY.color = new BABYLON.Color3(0, 1, 0);
+// 		// 		var yChar = makeTextPlane("Y", "green", size / 10);
+// 		// 		yChar.position = new BABYLON.Vector3(0, 0.9 * size, -0.05 * size);
+// 		// 		var axisZ = BABYLON.Mesh.CreateLines("axisZ", [
+// 		// 				new BABYLON.Vector3(0, heightAboveGround, 0), new BABYLON.Vector3(0, heightAboveGround, size), new BABYLON.Vector3(0, -0.05 * size + heightAboveGround, size * 0.95),
+// 		// 				new BABYLON.Vector3(0, heightAboveGround, size), new BABYLON.Vector3(0, 0.05 * size + heightAboveGround, size * 0.95)
+// 		// 		], scene);
+// 		// 		axisZ.color = new BABYLON.Color3(0, 0, 1);
+// 		// 		var zChar = makeTextPlane("Z", "blue", size / 10);
+// 		// 		zChar.position = new BABYLON.Vector3(0, 0.05 * size, 0.9 * size);
+// 		// };
+
+
+// engine = createDefaultEngine();
+// if (!engine) throw 'engine should not be null.';
+// scene = createScene();;
+// sceneToRender = scene
+
+// engine.runRenderLoop(function () {
+// 		if (sceneToRender) {
+// 				sceneToRender.render();
+// 		}
+// });
+
+// // Resize
+// window.addEventListener("resize", function () {
+// 		engine.resize();
+// });
+	</script>
+</body>
+</html>
